@@ -48,4 +48,32 @@ https://github.com/commaai/openpilot/wiki/Volkswagen-PQ
 
 - check if we have v3 steering rack
 - enable LKAS over OBD 
-- 
+
+
+
+
+
+I do have the J533 harness already installed. I wonder if I need to leave the original J533 connection in during these steps.
+
+Would that make a difference? I figured that the harness was just acting as a passthrough device but maybe it's causing issues
+jyoung8607 — 06/08/2023 9:47 AM
+On PQ it's in Adaptations, not Coding
+olid — 06/08/2023 10:12 AM
+I'm so sorry for all of the questions, but do you know which adaptations to manipulate? Is there a guide for enabling LKAS functionality on PQ/NMS cars?
+
+I have both Car Scanner and OBDEleven at my disposal 
+jyoung8607 — 06/08/2023 10:12 AM
+It's called either Lane Assist or Heading Control Assist
+There aren't that many Adaptations in address 44, you'll figure it out
+
+
+Okay 🙂 using obd11, it correctly recognizes my car as an NMS Passat
+
+But when I go to control unit 44 (steering assistance) and select the adaptations option, it asks for a channel number (with 256 possible values). Since I don't know the channel to choose, I just select channel 0 and go through them all. I've cycled through them and nearly all of them are null (?) channels. Some of them say Not Available as their "value" and others just have an int as their value but they don't have any descriptions. Check out this video to see what I mean.
+
+I'm kind of at a loss here. If there were channel/adaptations/coding manuals that I could reference then I could do more digging but I'm kind of ready to give up and return the comma.
+
+@jyoung8607 do you have any plans to create a script like vw_mqb_config.py for NMS/PQ cars? I wouldn't mind testing it. No worries if not! That'll just be the end of my Comma journey until a future date 😢
+
+
+@olid someday I will do a PQ config script, just haven't gotten around to it. it requires bringing in an external dependency to support KWP2000-over-VW CAN TP2.0 diagnostic sessions instead of the more modern UDS over CAN ISO-TP
