@@ -41,3 +41,11 @@ https://www.youtube.com/watch?v=L1u6AkSpR98l
 
 
 https://github.com/commaai/openpilot/wiki/Volkswagen-PQ
+
+
+
+## Todo
+
+- check if we have v3 steering rack
+- enable LKAS over OBD 
+- 
